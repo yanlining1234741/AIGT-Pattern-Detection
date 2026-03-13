@@ -1,0 +1,140 @@
+================================================================================
+  AIGT-Pattern-Detection — GitHub Repository
+  Adaptive AI-Generated Text Detection via Generative Pattern of LLM
+  Author: Lining Yan | Wenzhou-Kean University | 2025
+================================================================================
+
+REPOSITORY LINK
+---------------
+https://github.com/yanlining1234741/AIGT-Pattern-Detection
+
+NOTE: Replace YOUR_USERNAME with your actual GitHub username.
+      After creating the repository (instructions below), this link becomes live.
+
+
+================================================================================
+HOW TO CREATE AND PUSH THIS PROJECT TO GITHUB (STEP-BY-STEP)
+================================================================================
+
+STEP 1 — Create the GitHub Repository
+--------------------------------------
+1. Go to https://github.com and sign in to your account.
+2. Click the "+" icon (top-right) → "New repository".
+3. Fill in the form:
+     Repository name:  AIGT-Pattern-Detection
+     Description:      Adaptive AI-Generated Text Detection via Generative Pattern of LLM
+     Visibility:       Public   ← IMPORTANT: must be public for submission
+     Add README:       OFF  (we already have one)
+     Add .gitignore:   OFF  (we already have one)
+     Add license:      OFF  (optional)
+4. Click "Create repository".
+5. Copy the repository URL shown on the next page:
+     https://github.com/YOUR_USERNAME/AIGT-Pattern-Detection.git
+
+
+STEP 2 — Install Git (if not already installed)
+-------------------------------------------------
+Download from: https://git-scm.com/downloads
+Verify installation:
+    git --version
+
+
+STEP 3 — Configure Git Identity (first time only)
+--------------------------------------------------
+    git config --global user.name "Your Name"
+    git config --global user.email "your_email@example.com"
+
+
+STEP 4 — Initialise and Push the Project
+------------------------------------------
+Open a terminal in the AIGT-Pattern-Detection folder, then run:
+
+    git init
+    git add .
+    git commit -m "Initial commit: full implementation of AIGT pattern-based detection framework"
+    git branch -M main
+    git remote add origin https://github.com/YOUR_USERNAME/AIGT-Pattern-Detection.git
+    git push -u origin main
+
+You will be prompted for your GitHub username and password.
+If you use 2FA, use a Personal Access Token instead of your password:
+    Go to GitHub → Settings → Developer settings → Personal access tokens → Generate new token
+    Select scope: "repo" → Generate → copy the token → use as password
+
+
+STEP 5 — Verify
+----------------
+Open your browser and navigate to:
+    https://github.com/YOUR_USERNAME/AIGT-Pattern-Detection
+
+You should see:
+  ✔ notebooks/   (3 Jupyter notebooks)
+  ✔ docs/        (DATASETS.md)
+  ✔ README.md
+  ✔ requirements.txt
+  ✔ .gitignore
+
+
+STEP 6 — Update This File With Your Final Link
+------------------------------------------------
+Replace "YOUR_USERNAME" at the top of this file with your actual GitHub username,
+then re-upload or update this .txt file in your submission zip.
+
+
+================================================================================
+WHAT IS INCLUDED IN THE REPOSITORY
+================================================================================
+
+File/Folder                          Description
+------------------------------------  ------------------------------------------
+notebooks/01_preprocessing.ipynb     Data loading, cleaning, class balancing,
+                                      train/test splitting for all 5 datasets
+
+notebooks/02_feature_extraction.ipynb Multi-granularity feature extraction
+                                      (statistical, syntactic, semantic),
+                                      KMeans & DBSCAN pattern discovery,
+                                      pattern-aware training set construction
+
+notebooks/03_model_training.ipynb    EBM, XGBoost, BERT, RoBERTa training
+                                      and evaluation; ablation studies;
+                                      SHAP interpretability; all result plots
+
+docs/DATASETS.md                     Step-by-step instructions to download
+                                      all 5 datasets (DAIGT, HC3, LLMDetect,
+                                      MAGE, MultiModel)
+
+requirements.txt                     All Python package dependencies
+
+.gitignore                           Excludes large data/model files from Git
+
+README.md                            Full setup, run, and results guide
+
+
+================================================================================
+DATASETS (not included in repo — see docs/DATASETS.md)
+================================================================================
+
+Dataset         Source                                         Size
+--------------  ---------------------------------------------  -------
+DAIGT v2        kaggle.com/datasets/thedrcat/daigt-v2         ~137k
+MultiModel      huggingface.co/datasets/gsingh1-py/train      ~7k
+HC3             github.com/Hello-SimpleAI/chatgpt-comparison  ~24k
+LLMDetect       kaggle.com/competitions/llm-detect-ai         ~1.4k
+MAGE            huggingface.co/datasets/yaful/MAGE            ~50k
+
+All datasets are publicly available and free for academic use.
+
+
+================================================================================
+REPRODUCIBILITY NOTES
+================================================================================
+
+- All random seeds are fixed to 42 throughout the codebase.
+- Train/test splits are text-disjoint (verified with assertion checks in notebook 1).
+- Pattern training sets use exactly 44–50 samples per dataset as described in the thesis.
+- GPU is recommended for notebooks 02 and 03 (feature extraction uses GPT-2 and
+  sentence-transformers; model training uses BERT/RoBERTa fine-tuning).
+- CPU-only mode is supported but will be significantly slower (~5–10x).
+- Full end-to-end runtime on GPU: approximately 3–5 hours for all 5 datasets.
+
+================================================================================
